@@ -3,6 +3,7 @@
 #include "action.h"
 #include "util.h"
 #include "action_layer.h"
+#include "led.h"
 #include "hook.h"
 
 #ifdef DEBUG_ACTION
@@ -12,7 +13,7 @@
 #endif
 
 
-/* 
+/*
  * Default Layer State
  */
 uint32_t default_layer_state = 0;
@@ -54,7 +55,7 @@ void default_layer_xor(uint32_t state)
 
 
 #ifndef NO_ACTION_LAYER
-/* 
+/*
  * Keymap Layer State
  */
 uint32_t layer_state = 0;
@@ -64,6 +65,7 @@ static void layer_state_set(uint32_t state)
     dprint("layer_state: ");
     layer_debug(); dprint(" to ");
     layer_state = state;
+    led_layer_set(state);
     hook_layer_change(layer_state);
     layer_debug(); dprintln();
     clear_keyboard_but_mods(); // To avoid stuck keys
