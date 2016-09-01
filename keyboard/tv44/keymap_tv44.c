@@ -9,21 +9,21 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* 1: FN 1 */
     KEYMAP(GRV,  FN4, FN5, FN6, FN7, FN8, FN9,FN10,FN11,FN12,FN13,  DEL, \
-           FN0, BSLS,QUOT,MINS, EQL,LBRC,RBRC,DOWN,  UP,LEFT,RGHT,  FN0, \
+           TRNS, BSLS,QUOT,MINS, EQL,LBRC,RBRC,DOWN,  UP,LEFT,RGHT,  TRNS, \
            TRNS, ESC,FN20,PSCR,TRNS,TRNS,TRNS,MSTP,MPLY,MPRV,MNXT, RSFT, \
            TRNS, LGUI,  TRNS, TRNS,    TRNS,     TRNS, TRNS, TRNS, TRNS),
 
     /* 2: FN 2 */
-    KEYMAP(FN3, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,   7,   8,   9,   0, TRNS, \
+    KEYMAP(FN3,    1,   2,   3,   4,   5,   6,   7,   8,   9,   0, TRNS, \
            ESC, FN14,FN15,FN16,FN17,FN18,FN19,   4,   5,   6,VOLU,  ENT, \
-           FN1, TRNS,TRNS,TRNS,TRNS,TRNS,   0,   1,   2,   3,VOLD,  FN1, \
+           TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,   0,   1,   2,   3,VOLD,  TRNS, \
            TRNS, TRNS,  TRNS, TRNS,    TRNS,     TRNS, TRNS, TRNS, TRNS),
 
     /* 3:  Game Mode */
     KEYMAP(TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  F1,  F2,  F3,  F4, TRNS, \
            ESC, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  F5,  F6,  F7,  F8,  ENT, \
            LSFT,    1,   2,   3,   4,   5,   6,  F9, F10, F11, F12,RSFT, \
-           TRNS, LSFT,     B,  SPC,       C,      TRNS, TRNS, TRNS, FN2),
+           TRNS, LSFT,     B,  SPC,       C,      TRNS, TRNS, TRNS, TRNS),
 
    /* 4:  LED Mode */
    KEYMAP(TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS, \
@@ -54,4 +54,6 @@ const uint16_t PROGMEM fn_actions[] = {
     [18] = ACTION_MODS_KEY(MOD_LSFT, KC_LBRC),
     [19] = ACTION_MODS_KEY(MOD_LSFT, KC_RBRC),
     [20] = ACTION_LAYER_TOGGLE(4),
+    [21] = ACTION_LAYER_TAP_KEY(1, KC_QUOT),
+    [22] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ESC)
 };
