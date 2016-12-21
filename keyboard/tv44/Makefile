@@ -39,7 +39,11 @@
 #----------------------------------------------------------------------------
 
 # Target file name (without extension).
-TARGET = tv44_lufa
+ifdef TARGETFILE
+	TARGET = $(TARGETFILE)
+else
+	TARGET = tv44_lufa
+endif
 
 # Directory common source filess exist
 TMK_DIR = ../../tmk_core
