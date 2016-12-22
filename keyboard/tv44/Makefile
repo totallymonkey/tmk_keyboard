@@ -45,6 +45,12 @@ else
 	TARGET = tv44_lufa
 endif
 
+ifdef LEDCONF
+	LED = $(LEDCONF).c
+else
+	LED = led.c
+endif
+
 # Directory common source filess exist
 TMK_DIR = ../../tmk_core
 
@@ -54,7 +60,7 @@ TARGET_DIR = .
 # project specific files
 SRC =	keymap_common.c \
 	matrix.c \
-	led.c
+	$(LED)
 
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
