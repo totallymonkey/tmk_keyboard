@@ -68,25 +68,6 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      ESC  ,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  F5,  F6,  F7,  F8,  ENT, \
      LSFT  ,   1,   2,   3,   4,   5,   6,  F9, F10, F11, F12,RSFT, \
      TRNS, LSFT,     B,     SPC,         C,   TRNS,   TRNS,  TRNS  ),
-
-#if 0
-   /* Layer: XX Layer
-    * ,-------------------------------------------------.
-    * |   |   |   |   |   |   |   |   |   |   |   |     |
-    * |-------------------------------------------------|
-    * |    |   |   |   |   |   |   |   |   |   |   |    |
-    * |-------------------------------------------------|
-    * |     |   |   |   |   |   |   |   |   |   |   |   |
-    * |-------------------------------------------------|
-    * |    |       |    |     |       |    |     |      |
-    * `-------------------------------------------------'
-    */
-   KEYMAP(
-     TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS, \
-     TRNS ,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS, \
-     TRNS  ,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-     TRNS, TRNS,  TRNS,    TRNS,      TRNS,   TRNS,   TRNS,  TRNS   ),
-#endif
 };
 
 const action_t PROGMEM fn_actions[] = {
