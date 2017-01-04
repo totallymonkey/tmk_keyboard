@@ -1,5 +1,5 @@
 /*
-Copyright 2011 Jun Wako <wakojun@gmail.com>
+Copyright 2012,2013 Jun Wako <wakojun@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,29 +14,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
-#ifndef LED_H
-#define LED_H
-#include "stdint.h"
+#include "keymap_common.h"
 
 
-/* keyboard LEDs */
-#define USB_LED_NUM_LOCK                0
-#define USB_LED_CAPS_LOCK               1
-#define USB_LED_SCROLL_LOCK             2
-#define USB_LED_COMPOSE                 3
-#define USB_LED_KANA                    4
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-void led_set(uint8_t usb_led);
-void led_layer_set(uint32_t state);
-
-#ifdef __cplusplus
+/* translates key to keycode */
+uint8_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
+{
+    return pgm_read_byte(&keymaps[(layer)][(key.row)][(key.col)]);
 }
-#endif
 
-#endif
+/* translates Fn keycode to action */
+action_t keymap_fn_to_action(uint8_t keycode)
+{
+    return (action_t){ .code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]) };
+}
