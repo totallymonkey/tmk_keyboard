@@ -58,8 +58,8 @@ TMK_DIR = ../../tmk_core
 TARGET_DIR = .
 
 # project specific files
-SRC =	keymap_common.c \
-	matrix.c \
+SRC =	matrix.c \
+	backlight.c \
 	$(LED)
 
 ifdef KEYMAP
@@ -131,6 +131,7 @@ CONSOLE_ENABLE = yes	# Console for debug(+400)
 COMMAND_ENABLE = yes    # Commands for debug and configuration
 #SLEEP_LED_ENABLE = yes  # Breathing sleep LED during USB suspend
 NKRO_ENABLE = yes	# USB Nkey Rollover - not yet supported in LUFA
+BACKLIGHT_ENABLE = yes
 
 
 # Optimize size but this may cause error "relocation truncated to fit"
