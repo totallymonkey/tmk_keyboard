@@ -20,11 +20,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 void backlight_set(uint8_t level) {
-    DDRB |= (1<<2);
+    DDRB |= (1<<5);
 
     if (level) { // Backlight on
-        PORTB |= (1<<2);
+        PORTB |= (1<<5);
     } else { // Backlight off
-        PORTB &= ~(1<<2);
+        PORTB &= ~(1<<5);
     }
 }
