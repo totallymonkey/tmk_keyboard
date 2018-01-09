@@ -21,15 +21,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEAE
-#define PRODUCT_ID      0x8844
-#define DEVICE_VER      0x0002
-#define MANUFACTURER    Evan Sailer
-#define PRODUCT         TheVan 44
-#define DESCRIPTION     keyboard firmware for TV44
+#define PRODUCT_ID      0x8870
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    TheVan Keyboards
+#define PRODUCT         BananaSplit 60
+#define DESCRIPTION     keyboard firmware for BananaSplit 60
 
 /* key matrix size */
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 12
+#define MATRIX_ROWS 5
+#define MATRIX_COLS 14
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
