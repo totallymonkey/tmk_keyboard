@@ -13,25 +13,26 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * `-------------------------------------------------'
     */
    KEYMAP(
-     TAB ,   Q,   W,   F,   P,   B,   J,   L,   U,   Y,   SCLN,  BSPC, \
-     FN0  ,   A,   R,   S,   T,   G,   H,   N,   E,  I, O, FN21, \
-     FN22  ,   Z,   X,   C,   D,   V,   K,   M,COMM, DOT,SLSH, FN1, \
+     TAB ,   Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,  BSPC, \
+     FN0  ,   A,   S,   D,   F,   G,   H,   J,   K,  L, SCLN, FN21, \
+     FN22  ,   Z,   X,   C,   V,   B,   N,   M,COMM, DOT,SLSH, FN1, \
      LCTL,  FN1,  LALT,     FN23,       SPC,   RGUI,   RSFT,  FN2    ),
 
    /* Layer: Function Layer 1
     * ,-------------------------------------------------.
     * |  `|  !|  @|  #|  $|  %|  ^|  &|  *|  (|  )| Del |
     * |-------------------------------------------------|
-    * |    |  \|  '|  -|  =|  [|  ]| Dn| Up|Lft| Rt|    |
+    * |    |  \|  '|  -|  =|  |  Left| Dn| Up|Rt|  |    |
     * |-------------------------------------------------|
     * |     |Esc|LED|PSc|   |   |   |Stp|Ply|Prv|Nxt|Sft|
     * |-------------------------------------------------|
     * |    |  Gui  |    |     |       |    |     |      |
-    * `-------------------------------------------------'
+    * `--------------------------------------------------
+	w------------------'
     */
    KEYMAP(
      GRV , FN4, FN5, FN6, FN7, FN8, FN9,FN10,FN11,FN12,FN13,   DEL, \
-     TRNS ,BSLS,QUOT,MINS, EQL,LBRC,RBRC,LEFT,  DOWN,UP,RIGHT, TRNS, \
+     TRNS ,BSLS,QUOT,MINS, EQL,TRNS,LEFT,DOWN,  UP,RIGHT,TRNS, TRNS, \
      TRNS  , ESC,TRNS,PSCR,TRNS,TRNS,TRNS,HOME,PGDN,PGUP,END,RSFT, \
      TRNS, TRNS,  TRNS,    TRNS,      TRNS,   TRNS,   TRNS,  BTLD   ),
 
@@ -69,7 +70,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      LSFT  ,   1,   2,   3,   4,   5,   6,  F9, F10, F11, F12,RSFT, \
      TRNS, LSFT,     B,     SPC,         C,   TRNS,   TRNS,  TRNS  ),
 	 
-	/* Layer: Function Layer 4 (SpaceFN)
+	/* Layer: Function Layer 4 (EnterFN)
     * ,-------------------------------------------------.
     * |  `|  !|  @|  #|  $|  %|  ^|  &|  *|  (|  )| Del |
     * |-------------------------------------------------|
@@ -81,9 +82,9 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * `-------------------------------------------------'
     */
    KEYMAP(
-     TRNS , TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,FN18,FN19,TRNS,TRNS,   TRNS, \
+     TRNS ,TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,FN18,FN19,TRNS,TRNS,   TRNS, \
      TRNS ,TRNS,TRNS,TRNS, TRNS,TRNS,TRNS,FN12,FN13,TRNS,TRNS, TRNS, \
-     TRNS  , TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,LBRC,RBRC,TRNS,TRNS,TRNS, \
+     TRNS ,FN24,FN25,TRNS,TRNS,TRNS,TRNS,LBRC,RBRC,TRNS,TRNS,TRNS, \
      TRNS, TRNS,  TRNS,    TRNS,      TRNS,   TRNS,   TRNS,  TRNS   ),
 };
 
@@ -111,5 +112,7 @@ const action_t PROGMEM fn_actions[] = {
     [20] = ACTION_BACKLIGHT_STEP(),
     [21] = ACTION_LAYER_TAP_KEY(1, KC_QUOT),
     [22] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ESC),
-	[23] = ACTION_LAYER_TAP_KEY(4, KC_ENTER)
+	[23] = ACTION_LAYER_TAP_KEY(4, KC_ENTER),
+	[24] = ACTION_MODS_KEY(MOD_LCTL, KC_LGUI | KC_LEFT),
+	[25] = ACTION_MODS_KEY(MOD_LCTL | KC_LGUI, KC_RIGHT)
 };
